@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "Enter your E-mail."
+read -r EMAIL
+ssh-keygen -t rsa -b 4096 -C "$(echo $EMAIL)"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+echo "===SSH Key Copied To Clipboard==="
+pbcopy < ~/.ssh/id_rsa.pub
