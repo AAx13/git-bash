@@ -1,12 +1,10 @@
 #!/bin/bash
-echo "\nAdd which file(s)?: "
+echo "Add which file(s)?: "
 read -r ADDWHAT
 git add $ADDWHAT
-echo "\nCommit comment? :"
-read -r COMMENT
-git commit -m $COMMENT
-echo "\nWhich branch to push from?: "
+git commit -m "auto commit"
+echo "Which branch to push from?: "
 read -r FROMBRANCH
-echo "\nAnd where to pugh to?: "
+echo "And where to push to?: "
 read -r TOBRANCH
 git push $TOBRANCH $FROMBRANCH
