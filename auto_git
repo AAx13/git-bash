@@ -1,2 +1,10 @@
 #!/bin/bash
-git add .
+echo "Add which file(s)?: "
+read -r ADDWHAT
+git add $ADDWHAT
+git commit -m "auto commit"
+echo "Which branch to push from?: "
+read -r FROMBRANCH
+echo "And where to push to?: "
+read -r TOBRANCH
+git push $TOBRANCH $FROMBRANCH
