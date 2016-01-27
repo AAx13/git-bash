@@ -1,12 +1,8 @@
 #!/bin/bash
-echo "Add which file(s)?: "
-read -r ADDWHAT
+read -p "Which file(s) would you like to include/add?: " ADDWHAT
 git add $ADDWHAT
-echo "Please add a comment for this commit: "
-read -r COMMENT
+read -p "Please add a comment for this commit: " COMMENT
 git commit -m "$(echo $COMMENT)"
-echo "Which branch to push from?: "
-read -r FROMBRANCH
-echo "And where to push to?: "
-read -r TOBRANCH
+read -p "Which branch to push from?: " FROMBRANCH
+read -p "And where to push to?: " TOBRANCH
 git push $TOBRANCH $FROMBRANCH
