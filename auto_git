@@ -2,7 +2,9 @@
 echo "Add which file(s)?: "
 read -r ADDWHAT
 git add $ADDWHAT
-git commit -m "auto commit"
+echo "Please add a comment for this commit: "
+read -r COMMENT
+git commit -m "$(echo $COMMENT)"
 echo "Which branch to push from?: "
 read -r FROMBRANCH
 echo "And where to push to?: "
